@@ -1,0 +1,8 @@
+Model Information:
+* title:	Sketchfab Weekly - Computer - HAL-3000
+* source:	https://sketchfab.com/3d-models/sketchfab-weekly-computer-hal-3000-88c63d07d662432fb9f4c81894117652
+* author:	Dark Mermaids (https://sketchfab.com/darkmermaids)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
