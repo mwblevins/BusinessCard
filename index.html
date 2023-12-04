@@ -3,44 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebAR with A-Frame</title>
+    <title>AR Buttons</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
 </head>
-<body style="margin: 0; overflow: hidden;">
-<a-scene embedded arjs="sourceType: webcam; debugUIEnabled: true;">
-    <!-- Display the GLTF model -->
-    <a-entity
-            gltf-model="url(https://mwblevins.github.io/BusinessCard/raw/main/sketchfab_weekly_-_computer_-_hal-3000/computer.gltf)"
-            scale="1 1 1"
-            position="0 0 -5"
-    ></a-entity>
-
-    <!-- PNG button linking to GitHub -->
-    <a-link
-            href="https://github.com/mwblevins"
-            title="Visit My GitHub!"
-            image="url()"
-            scale="0.2 0.2 0.2"
-            position="0 -.75 -5"
-    ></a-link>
-    <a-link
-            href="https://linkedin.com/in/mwblevins"
-            title="Lets Connect!"
-            image="url()"
-            scale="0.2 0.2 0.2"
-            position="-1 -.75 -5"
-    ></a-link>
-    <a-link
-            href="mailto:michaelwblevins@gmail.com"
-            title="email"
-            image="url()"
-            scale="0.2 0.2 0.2"
-            position="1 -.75 -5"
-    ></a-link>
-
-    <!-- Add a camera to the scene -->
+<body>
+<a-scene embedded arjs>
     <a-entity camera></a-entity>
+
+    <a-entity position="-1 0 -3" rotation="0 0 0" id="linkedinButton">
+        <a-link title="LinkedIn" scale=".2 .2 .2">
+        </a-link>
+    </a-entity>
+
+    <a-entity position="0 0 -3" rotation="0 0 0" id="githubButton">
+        <a-link title="GitHub" scale=".2 .2 .2">
+        </a-link>
+    </a-entity>
+
+    <a-entity position="1 0 -3" rotation="0 0 0" id="emailButton">
+        <a-link title="Email" scale=".2 .2 .2">
+        </a-link>
+    </a-entity>
 </a-scene>
+
+<script>
+    // Add event listeners to the buttons
+    document.querySelector('#linkedinButton').addEventListener('click', function () {
+        window.open('https://www.linkedin.com/', '_blank');
+    });
+
+    document.querySelector('#githubButton').addEventListener('click', function () {
+        window.open('https://github.com/', '_blank');
+    });
+
+    document.querySelector('#emailButton').addEventListener('click', function () {
+        window.open('mailto:michaelwblevins@gmail.com', '_blank');
+        console.log("click")
+    });
+</script>
+
 </body>
 </html>
+
