@@ -1,48 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Buttons</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+    <script src="aframe-ar.js"></script>
 </head>
-<body>
-<a-scene embedded arjs>
+
+<body style="margin : 0px; overflow: hidden;">
+<a-scene arjs>
+    <a-marker preset='custom' type='pattern' url='qrMarker.patt'>
+        <a-box color="red"></a-box>
+    </a-marker>
+
     <a-entity camera></a-entity>
 
-    <a-entity position="-.5 0 -3" rotation="0 0 0" id="linkedinButton">
-        <a-link title="LinkedIn" scale=".1 .1 .1">
-        </a-link>
-    </a-entity>
-
-    <a-entity position="0 0 -3" rotation="0 0 0" id="githubButton">
-        <a-link title="GitHub" scale=".1 .1 .1">
-        </a-link>
-    </a-entity>
-
-    <a-entity position=".5 0 -3" rotation="0 0 0" id="emailButton">
-        <a-link title="Email" scale=".1 .1 .1">
-        </a-link>
-    </a-entity>
 </a-scene>
-
-<script>
-    // Add event listeners to the buttons
-    document.querySelector('#linkedinButton').addEventListener('click', function () {
-        window.open('https://www.linkedin.com/', '_blank');
-    });
-
-    document.querySelector('#githubButton').addEventListener('click', function () {
-        window.open('https://github.com/', '_blank');
-    });
-
-    document.querySelector('#emailButton').addEventListener('click', function () {
-        window.open('mailto:michaelwblevins@gmail.com', '_blank');
-        console.log("click")
-    });
-</script>
-
 </body>
 </html>
 
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+
+<a-scene
+        arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: true;"
+        embedded
+        cursor="rayOrigin: mouse"
+        renderer="logarithmicDepthBuffer: true;"
+        vr-mode-ui="enabled: false"
+        gesture-detector
+>
+</a-scene>
+<a-scene>
+    <a-assets>
+        <a-asset-item id="pc" src="https://raw.githubusercontent.com/mwblevins/BusinessCard/main/sketchfab_weekly_-_computer_-_hal-3000/computer.gltf"></a-asset-item>
+    </a-assets>
+    <a-entity gltf-model="#pc" scale="1 1 1"></a-entity>
+</a-scene>
+<style>
+    .button-container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+</style>
+
+<body style="margin : 0px; overflow: hidden;">
+
+<div class="button-container">
+    <!--phone-->
+    <a href="https://mwblevins.github.io/blevinsPortfolio.github.io/" target="_blank">
+        <img
+                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/icons8-website-50.png?v=1701708555774"
+                style="width:50px;margin:20px;"
+        /></a>
+    <a href="https://github.com/mwblevins" target="_blank">
+        <img
+                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/github-sign.png?v=1701708202478"
+                style="width:50px;margin:20px;"
+        /></a>
+    <a
+            href="https://www.linkedin.com/in/mwblevins"
+            target="_blank"
+    >
+        <img
+                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/icons8-linkedin-50%20(1).png?v=1701708368971"
+                style="width:50px;margin:20px;"
+        /></a>
+
+    <a
+       href="mailto:michaelwblevins@gmail.com"
+       target="_blank">
+        <img
+                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/icons8-email-50.png?v=1701708439498"
+                style="width:50px;margin:20px;"
+        /></a>
+
+</div>
+
+</body>
