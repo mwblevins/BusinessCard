@@ -12,12 +12,12 @@
        target="_blank"
     >
         <img
-                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/icons8-website-50.png?v=1701708555774"
+                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/world.png?v=1701830179151"
                 style="width:60px;margin:20px;"
         /></a>
     <a href="https://github.com/mwblevins" target="_blank">
         <img
-                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/github-sign.png?v=1701708202478"
+                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/github-mark-white.png?v=1701830146759"
                 style="width:60px;margin:20px;"
         /></a>
     <a
@@ -25,7 +25,7 @@
             target="_blank"
     >
         <img
-                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/icons8-linkedin-50%20(1).png?v=1701708368971"
+                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/LI-In-Bug.png?v=1701830157580"
                 style="width:60px;margin:20px;"
         /></a>
 
@@ -33,11 +33,14 @@
             href="mailto:michaelwblevins@gmail.com"
             target="_blank">
         <img
-                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/icons8-email-50.png?v=1701708439498"
+                src="https://cdn.glitch.global/13001b85-1c3f-400f-8db4-4924ab4817e4/gmail.png?v=1701830169831"
                 style="width:60px;margin:20px;"
         /></a>
 
 
+</div>
+<div id="message-container">
+    <p>Stay connected!</p>
 </div>
 <a-scene
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
@@ -66,6 +69,18 @@
         left: 0;
         height: 100%;
         width: 100%;
+    }
+    #message-container{
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: transparent;
+        color: white;
+        font-size: 48px;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 2;
     }
 </style>
 </body>
