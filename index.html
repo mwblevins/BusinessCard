@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- it matters what order you load in, cant load in the same thing more than once-->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.0.0/aframe/build/aframe-ar-nft.js"></script>
 </head>
+<!--can have only one body-->
 <body style="margin: 0; overflow: hidden;">
 <div class="button-container">
-    <!--phone-->
     <!--_blank opens link in a newtab-->
     <a href="https://mwblevins.github.io/blevinsPortfolio.github.io/"
        target="_blank"
@@ -42,6 +43,7 @@
 <div id="message-container">
     <p>Lets get connected!</p>
 </div>
+<!--sets interactivity for buttons and loads raw gltf model-->
 <a-scene
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
         embedded cursor="rayOrigin: mouse"
@@ -51,6 +53,7 @@
     <a-asset-item id="pc" src="https://raw.githubusercontent.com/mwblevins/BusinessCard/main/sketchfab_weekly_-_computer_-_hal-3000/computer.gltf"></a-asset-item>
     <a-entity gltf-model="#pc" scale="4 3 3" position="0 0 -10" rotation="0 0 0"></a-entity>
 </a-scene>
+<!-- set all style for different containers-->
 <style>
     .button-container {
         height: 100%;
@@ -85,3 +88,4 @@
 </style>
 </body>
 </html>
+<!--EOF-->
